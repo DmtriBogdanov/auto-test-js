@@ -6,12 +6,20 @@
 
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
-
+const MIN_WINNING_DOUBLE = 3;
 let dice1 // your code
 let dice2 // your code
 let isWinningDouble // your code
 
-/*
+//let randomThrow = Math.floor((Math.random() * 6) + 1);
+
+dice1 = Math.floor((Math.random() * 6) + 1);
+dice2 = Math.floor((Math.random() * 6) + 1);
+
+if(dice1 === dice2 && dice1 > MIN_WINNING_DOUBLE) {
+  isWinningDouble = true;
+}
+
 console.log('Первый бросок: ' + dice1)
 console.log('Второй бросок: ' + dice2)
 if (isWinningDouble) {
@@ -19,4 +27,4 @@ if (isWinningDouble) {
 } else {
   console.log('Не выигрышный дубль.')
 }
-*/
+
