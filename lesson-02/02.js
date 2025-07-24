@@ -18,6 +18,8 @@ dice2 = Math.floor((Math.random() * 6) + 1);
 
 if(dice1 === dice2 && dice1 > MIN_WINNING_DOUBLE) {
   isWinningDouble = true;
+} else {
+  isWinningDouble = false;
 }
 
 console.log('Первый бросок: ' + dice1)
