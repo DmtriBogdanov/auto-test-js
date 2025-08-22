@@ -28,8 +28,9 @@ const map = (array, callback) => {
   const newArr = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
+    const index = array.indexOf(element);
     if (callback(element, index)) {
-      newArr.push(element);
+      newArr[index] = element;
     }
   }
   return newArr;
