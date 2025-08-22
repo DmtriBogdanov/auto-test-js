@@ -24,6 +24,7 @@ console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 */
 const numbers = [1, 2, 3, 4, 5];
 const newArr = [];
+const arrStr = ['cat', 'sheep', 'dog', 'wolf', 'dragon']
 
 const filter = (array, callback) => {
   for (let i = 0; i < array.length; i++) {
@@ -43,6 +44,14 @@ const oddNumbers = (number, index) => {
 
 };
 
-console.log(filter(numbers, oddNumbers))
+const oddStr = (str, index) => {
+
+  if (str.length > 3) {
+    newArr.push(str);
+  }
+
+};
+
+
 
 
