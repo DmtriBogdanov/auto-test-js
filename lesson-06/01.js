@@ -51,6 +51,5 @@ const oddNumbers = (number, index) => {
 
 };
 
-console.log(filter(str, oddNumbers))
 
 
