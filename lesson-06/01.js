@@ -22,35 +22,19 @@ const oddNumbers = filter(numbers, (element, index) => {
 
 console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 */
-const numbers = [1, 2, 3, 4, 5];
-const newArr = [];
-const arrStr = ['cat', 'sheep', 'dog', 'wolf', 'dragon']
-
 const filter = (array, callback) => {
+  const newArr = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
     const index = array.indexOf(element);
-
-    callback(element, index);
+    if (callback(element, index)) {
+      newArr.push(element);
+    }
   }
   return newArr;
 }
 
-const oddNumbers = (number, index) => {
 
-  if (number % 2 !== 0) {
-    newArr.push(number);
-  }
-
-};
-
-const oddStr = (str, index) => {
-
-  if (str.length > 3) {
-    newArr.push(str);
-  }
-
-};
 
 
 
