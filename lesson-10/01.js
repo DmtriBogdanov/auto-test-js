@@ -30,7 +30,10 @@ const model = {
     this.movies.push(newMovie)
     view.renderMovies(this.movies)
   },
-  // your code
+  deleteMovie(movieId) {
+    this.movies = this.movies.filter((movie) => movie.id !== movieId)
+    view.renderMovies(this.movies)
+  }
 }
 
 const view = {
@@ -40,6 +43,7 @@ const view = {
     const form = document.querySelector('.form')
     const inputTitle = document.querySelector('.input-title')
     const inputDescription = document.querySelector('.input-description')
+    const list = document.querySelector('.list')
 
     form.addEventListener('submit', function (event) {
       event.preventDefault()
@@ -51,7 +55,13 @@ const view = {
       inputDescription.value = ''
     })
 
-    // your code
+    list.addEventListener('click', function (event) {
+      if (event.target.classList.contains('delete-button')) {
+        const movieId = +event.target.parentElement.id
+        controller.deleteMovie(movieId)
+      }
+    })
+
   },
   renderMovies(movies) {
     const list = document.querySelector('.list')
@@ -91,7 +101,11 @@ const controller = {
       view.displayMessage('Заполните все поля!', true)
     }
   },
-  // your code
+  deleteMovie(movieId) {
+    model.deleteMovie(movieId)
+    view.displayMessage("Фильм успешно удалён!")
+
+  }
 }
 
 function init() {
